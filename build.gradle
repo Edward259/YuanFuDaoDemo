@@ -24,6 +24,9 @@ allprojects {
         maven {
             url "http://repo.boox.com/repository/maven-public/"
         }
+        maven {
+            url "http://repo.boox.com/repository/maven-releases-yuanfudao/"
+        }
     }
 }
 

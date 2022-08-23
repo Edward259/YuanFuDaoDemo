@@ -18,6 +18,7 @@ import com.android.onyx.scribbledemo.broadcast.GlobalDeviceReceiver;
 import com.android.onyx.scribbledemo.databinding.ActivityMainBinding;
 import com.android.onyx.scribbledemo.request.RendererToScreenRequest;
 import com.android.onyx.utils.TouchUtils;
+import com.onyx.android.sdk.OnyxSdk;
 import com.onyx.android.sdk.api.device.epd.EpdController;
 import com.onyx.android.sdk.data.note.TouchPoint;
 import com.onyx.android.sdk.pen.NeoFountainPen;
@@ -71,12 +72,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         touchHelper.setRawDrawingEnabled(true);
+        OnyxSdk.getInstance().setSideButtonSelection(true);
         super.onResume();
     }
 
     @Override
     protected void onPause() {
         touchHelper.setRawDrawingEnabled(false);
+        OnyxSdk.getInstance().setSideButtonSelection(false);
         super.onPause();
     }
 

@@ -1,4 +1,4 @@
-package com.android.onyx.scribbledemo;
+package com.android.onyx.yuanfudaodemo.scribble;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -14,10 +14,11 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import com.android.onyx.scribbledemo.broadcast.GlobalDeviceReceiver;
-import com.android.onyx.scribbledemo.databinding.ActivityMainBinding;
-import com.android.onyx.scribbledemo.request.RendererToScreenRequest;
+import com.android.onyx.yuanfudaodemo.R;
 import com.android.onyx.utils.TouchUtils;
+import com.android.onyx.yuanfudaodemo.databinding.ActivityScribbleBinding;
+import com.android.onyx.yuanfudaodemo.scribble.broadcast.GlobalDeviceReceiver;
+import com.android.onyx.yuanfudaodemo.scribble.request.RendererToScreenRequest;
 import com.onyx.android.sdk.OnyxSdk;
 import com.onyx.android.sdk.api.device.epd.EpdController;
 import com.onyx.android.sdk.data.note.TouchPoint;
@@ -36,12 +37,12 @@ import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 
-public class MainActivity extends AppCompatActivity {
+public class ScribbleActivity extends AppCompatActivity {
 
-    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG = ScribbleActivity.class.getSimpleName();
     public static final int RENDER_DEBOUNCE_INTERVAL = 500;
 
-    private ActivityMainBinding binding;
+    private ActivityScribbleBinding binding;
 
     private GlobalDeviceReceiver deviceReceiver = new GlobalDeviceReceiver();
     private RxManager rxManager;
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_scribble);
         deviceReceiver.enable(this, true);
         binding.setModel(this);
 
@@ -174,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
         ObservableOnSubscribe<Object> source = new ObservableOnSubscribe<Object>() {
             @Override
             public void subscribe(ObservableEmitter<Object> emitter) throws Exception {
-                MainActivity.this.emitter = emitter;
+                ScribbleActivity.this.emitter = emitter;
             }
         };
         Observable.create(source).debounce(RENDER_DEBOUNCE_INTERVAL, TimeUnit.MILLISECONDS)

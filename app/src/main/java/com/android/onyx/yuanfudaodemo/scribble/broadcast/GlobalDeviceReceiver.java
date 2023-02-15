@@ -1,4 +1,4 @@
-package com.android.onyx.scribbledemo.broadcast;
+package com.android.onyx.yuanfudaodemo.scribble.broadcast;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

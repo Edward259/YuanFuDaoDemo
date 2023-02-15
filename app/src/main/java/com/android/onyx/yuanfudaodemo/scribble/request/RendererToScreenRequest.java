@@ -1,4 +1,4 @@
-package com.android.onyx.scribbledemo.request;
+package com.android.onyx.yuanfudaodemo.scribble.request;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;

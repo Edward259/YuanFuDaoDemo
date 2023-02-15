@@ -1,4 +1,4 @@
-package com.android.onyx.scribbledemo;
+package com.android.onyx.yuanfudaodemo;
 
 import android.app.Application;
 

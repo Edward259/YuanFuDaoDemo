@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         deviceReceiver.enable(this, true);
         binding.setModel(this);
 
+        OnyxSdk.init(this);
         initPaint();
         initSurfaceView();
         initReceiver();

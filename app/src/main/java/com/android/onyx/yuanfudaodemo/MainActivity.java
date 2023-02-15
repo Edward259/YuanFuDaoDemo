@@ -10,13 +10,15 @@ import androidx.databinding.DataBindingUtil;
 
 import com.android.onyx.yuanfudaodemo.databinding.ActivityMainBinding;
 import com.android.onyx.yuanfudaodemo.scribble.ScribbleActivity;
+import com.android.onyx.yuanfudaodemo.wifi.WifiActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
     enum FUNCTION {
-        SCRIBBLE(ScribbleActivity.class);
+        SCRIBBLE(ScribbleActivity.class),
+        WIFI(WifiActivity .class);
 
         private Class targetActivity;
 

@@ -75,6 +75,7 @@ public class ScribbleActivity extends AppCompatActivity {
     protected void onResume() {
         touchHelper.setRawDrawingEnabled(true);
         OnyxSdk.getInstance().setSideButtonSelection(true);
+        OnyxSdk.getInstance().setRubberButtonDrawing(true);
         super.onResume();
     }
 
@@ -82,6 +83,7 @@ public class ScribbleActivity extends AppCompatActivity {
     protected void onPause() {
         touchHelper.setRawDrawingEnabled(false);
         OnyxSdk.getInstance().setSideButtonSelection(false);
+        OnyxSdk.getInstance().setRubberButtonDrawing(false);
         super.onPause();
     }
 

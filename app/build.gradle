@@ -36,8 +36,8 @@ android {
 }
 
 dependencies {
-    implementation('com.onyx.android.sdk:onyxsdk-pen:1.4.1')
-    implementation('com.onyx.android.sdk:onyxsdk-yuanfudao:0.0.7')
+    implementation('com.onyx.android.sdk:onyxsdk-pen:1.4.1.4')
+    implementation('com.onyx.android.sdk:onyxsdk-yuanfudao:0.0.8')
 
     implementation 'androidx.appcompat:appcompat:1.3.0'
     implementation 'com.google.android.material:material:1.4.0'
